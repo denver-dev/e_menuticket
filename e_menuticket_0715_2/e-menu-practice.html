@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta name="viewport" content="target-densitydpi=device-dpi, user-scalable=no, width=device-width, initial-scale=1">
+
+    <script>
+        var ua = navigator.userAgent.toLowerCase();
+        var isiOS = (ua.indexOf('iphone') > -1) || (ua.indexOf('ipad') > -1);
+        if (isiOS) {
+            var viewport = document.querySelector('meta[name="viewport"]');
+            if (viewport) {
+                var viewportContent = viewport.getAttribute('content');
+                viewport.setAttribute('content', viewportContent + ', user-scalable=no');
+            }
+        }
+    </script>
+
+    <title></title>
+    <meta name="keywords" content=",," />
+    <meta name="description" content="" />
+    <!-- Google Tag Manager -->
+    <!-- End Google Tag Manager -->
+    <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+        <![endif]-->
+    <!-- CSS読込 -->
+    <link rel="stylesheet" href="css/base.css" type="text/css" />
+    <link href="js/slick.css" rel="stylesheet" type="text/css">
+    <link href="js/slick-theme.css" rel="stylesheet" type="text/css">
+    <link href="js/mega.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+        integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <!-- ファビコン読込 -->
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <meta http-equiv="imagetoolbar" content="no">
+    <!-- 検索有無設定 -->
+    <meta name="robots" content="nofollow" />
+    <!-- googlefont -->
+    <link href='https://fonts.googleapis.com/css?family=Ropa+Sans' rel='stylesheet' type='text/css'>
+    <!-- jquery読込 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/easy-rollover.js"></script>
+    <script src="https://use.typekit.net/zzb5mon.js"></script>
+    <script src="js/modernizr-2.8.3.min.js"></script>
+    <script>
+        try {
+            Typekit.load({
+                async: true
+            });
+        } catch (e) {}
+    </script>
+    <script type="text/javascript" src="js/slick.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/modal.js"></script>
+    <script type="text/javascript" src="js/base-color.js"></script>
+    <!-- スクロール滑らかさ -->
+    <script type="text/javascript" src="js/jquery.easeScroll.js"></script>
+    <script type="text/javascript" src="js/esInner.js"></script>
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="css/highlight.css" type="text/css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script>
+    <!-- fullpage.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.5/fullpage.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.5/fullpage.css" rel="stylesheet" type="text/css">
+    <!-- スムーススクロール -->
+    <script>
+        $(function () {
+            $('a[href^="#"]').on('click', function () {
+                var speed = 1000;
+                var href = $(this).attr('href');
+                var target = $(href == '#' || href == '' ? 'html' : href);
+                var position = target.offset().top;
+                $('body,html').animate({
+                    scrollTop: position
+                }, speed, 'swing');
+                return false;
+            });
+        });
+    </script>
+    <!-- へッダー消し -->
+    <script type="text/javascript">
+        $(window).scroll(function () {
+            top_menu = $('header');
+            if (($(document).height() - ($(window).height() + $(window).scrollTop())) / $(document).height() <
+                0.12) {
+                top_menu.fadeOut();
+            } else {
+                top_menu.fadeIn();
+            }
+        });
+    </script>
+
+    <style id='base_val' type='text/css'></style>
+
+    <style type='text/css'>
+        table {
+            margin: auto;
+        }
+
+        /*表示切替*/
+        html body .view_pc {
+            display: block !important;
+        }
+
+        html body table.view_pc {
+            display: table !important;
+        }
+
+        html body table.view_pc tr {
+            display: table !important;
+        }
+
+        html body table.view_pc th {
+            display: table !important;
+        }
+
+        html body table.view_pc td {
+            display: table !important;
+        }
+
+        html body .view_pctab {
+            display: block !important;
+        }
+
+        html body table.view_pctab {
+            display: table !important;
+        }
+
+        html body table.view_pctab tr {
+            display: table !important;
+        }
+
+        html body table.view_pctab th {
+            display: table !important;
+        }
+
+        html body table.view_pctab td {
+            display: table !important;
+        }
+
+        html body .view_tab {
+            display: none !important;
+        }
+
+        html body .view_sp {
+            display: none !important;
+        }
+
+        html body .view_tabsp {
+            display: none !important;
+        }
+
+        @media only screen and (max-width: 1050px) {
+            html body .view_pc {
+                display: none !important;
+            }
+
+            html body .view_pctab {
+                display: block !important;
+            }
+
+            html body table.view_pctab {
+                display: table !important;
+            }
+
+            html body table.view_pctab tr {
+                display: table !important;
+            }
+
+            html body table.view_pctab th {
+                display: table !important;
+            }
+
+            html body table.view_pctab td {
+                display: table !important;
+            }
+
+            html body .view_tab {
+                display: block !important;
+            }
+
+            html body table.view_tab {
+                display: table !important;
+            }
+
+            html body table.view_tab tr {
+                display: table !important;
+            }
+
+            html body table.view_tab th {
+                display: table !important;
+            }
+
+            html body table.view_tab td {
+                display: table !important;
+            }
+
+            html body .view_sp {
+                display: none !important;
+            }
+
+            html body .view_tabsp {
+                display: block !important;
+            }
+
+            html body table.view_tabsp {
+                display: table !important;
+            }
+
+            html body table.view_tabsp tr {
+                display: table !important;
+            }
+
+            html body table.view_tabsp th {
+                display: table !important;
+            }
+
+            html body table.view_tabsp td {
+                display: table !important;
+            }
+        }
+
+        @media only screen and (max-width: 770px) {
+            html body .view_pc {
+                display: none !important;
+            }
+
+            html body .view_pctab {
+                display: none !important;
+            }
+
+            html body .view_tab {
+                display: none !important;
+            }
+
+            html body .view_sp {
+                display: block !important;
+            }
+
+            html body table.view_sp {
+                display: table !important;
+            }
+
+            html body table.view_sp tr {
+                display: table !important;
+            }
+
+            html body table.view_sp th {
+                display: table !important;
+            }
+
+            html body table.view_sp td {
+                display: table !important;
+            }
+
+            html body .view_tabsp {
+                display: block !important;
+            }
+
+            html body table.view_tabsp {
+                display: table !important;
+            }
+
+            html body table.view_tabsp tr {
+                display: table !important;
+            }
+
+            html body table.view_tabsp th {
+                display: table !important;
+            }
+
+            html body table.view_tabsp td {
+                display: table !important;
+            }
+        }
+
+        /* エラーメッセージ　赤文字設定 */
+        .error_msg {
+            color: #ff2e5a !important;
+        }
+    </style>
+
+    <link rel="stylesheet" href="css/sp.css" type="text/css" />
+
+</head>
+
+<body>
+
+    <!-- Header SP -->
+
+    <header class="bg_navy fixed_top">
+
+        <div class="sp_view">
+            <nav>
+                <div class="wrapper_100">
+                    <div class="wrapper_90 flex">
+                        <div class="width_60">
+                            <a href="#"><img src="img/nav_logo.png"></a>
+                        </div>
+                        <div class="width_40">
+                            <a href="#" class="bg_yellow">お問い合わせ</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+    </header>
+
+
+    <!-- Main -->
+
+
+    <main>
+
+
+        <div class="sp_view">
+
+            <!-- Banner SP Section -->
+
+            <div>
+                <img class="fix_zoom" src="img/sp_hero_img.png">
+            </div>
+
+            <!-- Services SP Section -->
+
+            <div class="u_line_m_b_grey"></div>
+
+            <div style="background-image: url('img/bg_service.png');" ;>
+
+                <div class="space_3"></div>
+
+                <div class="wrapper_90">
+                    <div class="cont_wrapper_100 flex">
+                        <div class="width_50">
+                            <img src="img/service_1.png">
+                        </div>
+                        <div class="width_50">
+                            <img src="img/service_2.png">
+                        </div>
+                    </div>
+
+                    <div class="cont_wrapper_100 flex txt_tpad_1">
+                        <div class="width_50">
+                            <img src="img/service_3.png">
+                        </div>
+                        <div class="width_50">
+                            <img src="img/service_4.png">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="u_line_m_navy_10"></div>
+
+            </div>
+
+
+            <!-- Benefits Section -->
+
+            <div class="benefits_section">
+
+                <div class="space_5"></div>
+
+                <div class="wrapper_90">
+                    <div class="cont_wrapper_100">
+                        <p class="font_100 txt_center bspace_05 bold" style="color: #1d1f65;">飲食店オーナー様</p>
+                        <p class="font_100 txt_center bold bspace_3"> <img style="width:34vw;"
+                                src="img/bnft_txt_highlight.png">してみたくありませんか？</p>
+                    </div>
+                </div>
+
+                <div class="wrapper_55">
+                    <div class="cont_wrapper_100 flex person_left ">
+                        <div class="width_100">
+                            <div class="bg_white flex txt_tpad_2 txt_bpad_2 bspace_2 box_m_navy">
+                                <div class="width_30 flex flex_center">
+                                    <img src="img/check.png">
+                                </div>
+                                <div class="width_70">
+                                    <p class="font_75" style="color:#081461;">感染症対策をしたい<br>非対面に対応したい</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="width_100">
+                            <div class="bg_white flex txt_tpad_2 txt_bpad_2 bspace_2 box_m_navy">
+                                <div class="width_30 flex flex_center">
+                                    <img src="img/check.png">
+                                </div>
+                                <div class="width_70">
+                                    <p class="font_75" style="color:#081461;">感染症対策をしたい<br>非対面に対応したい</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cont_wrapper_100 flex person_right">
+                        <div class="width_100">
+                            <div class="bg_white flex txt_tpad_2 txt_bpad_2 bspace_2 box_m_navy">
+                                <div class="width_30 flex flex_center">
+                                    <img src="img/check.png">
+                                </div>
+                                <div class="width_70">
+                                    <p class="font_75" style="color:#081461;">感染症対策をしたい<br>非対面に対応したい</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="width_100">
+                            <div class="bg_white flex txt_tpad_2 txt_bpad_2 bspace_2 box_m_navy">
+                                <div class="width_30 flex flex_center">
+                                    <img src="img/check.png">
+                                </div>
+                                <div class="width_70">
+                                    <p class="font_75" style="color: #081461;">感染症対策をしたい<br>非対面に対応したい</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="space_5"></div>
+            </div>
+
+            <!-- Offers Section -->
+
+            <div style="background-image: url('img/bg_light.png'); background-position: center; background-size: cover;
+             background-repeat: no-repeat; position: relative;">
+                <div class="bg_img">
+                    <img src="img/bg_benefits_btm.png">
+                </div>
+                <div class="space_5"></div>
+                <div class="space_05"></div>
+
+
+                <div class="wrapper_90">
+                    <div class="cont_wrapper_90 bspace_3">
+                        <div>
+                            <p class="font_75 txt_center" style="color: #081461;">店舗の”こうしたい”を実現できる</p>
+                            <img src="img/offer_details.png">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wrapper_80">
+                    <div class="cont_wrapper_100 flex">
+
+                        <div class="width_100 txt_center">
+                            <img style="width:48%;" src="img/offer_1.png">
+                        </div>
+                        <div class="width_48 flex">
+                            <img src="img/offer_2.png">
+                        </div>
+
+                        <div class="width_4 flex"></div>
+
+                        <div class="width_48 flex">
+                            <img src="img/offer_3.png">
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+    <footer>
+
+    </footer>
+</body>
+
+<script type="text/javascript">
+    window.addEventListener('load', function () {
+        // 通常
+        $('.rollover').easyRollover();
+
+        // サフィックス
+        $('.rollover-suffix').easyRollover({
+            suffix: '_off.',
+            suffix_replace: '_on.'
+        });
+
+        // 透過フェードするだけのロールオーバー
+        $('.rollover-fade1').easyRollover({
+            suffix: false,
+            transition: 'fade',
+            opacity: 0.2,
+            duration: 400
+        });
+
+        // フェードして切り替わるロールオーバー
+        $('.rollover-fade2').easyRollover({
+            transition: 'fade',
+            duration: 1000,
+            easing: 'swing'
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function () {
+        $('.menu > ul > li > ul:not(:has(ul))').addClass('normal-sub');
+        $(".menu > ul > li").hover(
+            function (e) {
+                if ($(window).width() > 1050) {
+                    $(this).children("ul").fadeIn(150);
+                    e.preventDefault();
+                }
+            },
+            function (e) {
+                if ($(window).width() > 1050) {
+                    $(this).children("ul").fadeOut(150);
+                    e.preventDefault();
+                }
+            }
+        );
+        $(".menu > ul > li").click(function () {
+            var thisMenu = $(this).children("ul");
+            var prevState = thisMenu.css('display');
+            $(".menu > ul > li > ul").fadeOut();
+            if ($(window).width() < 1051) {
+                if (prevState !== 'block')
+                    thisMenu.fadeIn(150);
+            }
+        });
+        $(".navmenu_1 li a").click(function () {
+            $('.Toggle').toggleClass('active');
+            $(".menu-container").toggleClass('open');
+            $(".menu > ul").toggleClass('show-on-mobile');
+        });
+        $(".toform a").click(function () {
+            $('.Toggle').toggleClass('active');
+            $(".menu-container").toggleClass('open');
+            $(".menu > ul").toggleClass('show-on-mobile');
+        });
+        $(".Toggle").click(function (e) {
+            $('.Toggle').toggleClass('active');
+            $(".menu-container").toggleClass('open');
+            $(".menu > ul").toggleClass('show-on-mobile');
+            e.preventDefault();
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    window.addEventListener('load', function () {
+        $('.navmenu_1 li a').click(function () {
+            $(this).toggleClass('open');
+            if ($(this).hasClass('open')) {
+                $(this).next('.navmenu_2').slideDown();
+                $('.navmenu_1 li a').not($(this)).removeClass('open');
+                $('.navmenu_2').not($(this).next('.navmenu_2')).slideUp();
+            } else {
+                $(this).removeClass('open'); //クラスを外す
+                $(this).next('.navmenu_2').slideUp();
+            }
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    //fullpage.jsの設定
+    var myFullpage = new fullpage('#fullpage', {
+        controlArrows: true,
+        verticalCentered: true,
+        resize: false,
+        scrollingSpeed: 700,
+        loopTop: true,
+        loopBottom: true,
+        loopHorizontal: true,
+        autoScrolling: true,
+        scrollBar: true,
+        anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', '5thpage', 'lastPage'],
+        menu: '#menu',
+        navigation: true,
+        navigationPosition: 'right',
+        navigationTooltips: [],
+        showActiveTooltip: false,
+        slidesNavigation: true
+    });
+</script>
+<style>
+    .fp-slidesNav.fp-bottom {
+        bottom: 6vh !important;
+        left: 47.5vw !important;
+    }
+</style>
+<script type="text/javascript">
+    //ローディングアニメの設定
+    $(function () {
+        var loader = $('.loader-wrap');
+        $(window).on('load', function () {
+            loader.fadeOut();
+        });
+    });
+</script>
+
+</html>
